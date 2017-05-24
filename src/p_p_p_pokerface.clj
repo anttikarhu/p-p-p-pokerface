@@ -62,7 +62,6 @@
                    [four-of-a-kind? 7]
                    [straight-flush? 8]}
         hand-value
-        (fn [checker]
-          (let [[check val] checker]
-            (if (check hand) val 0)))]
+        (fn [[check val]]
+          (if (check hand) val 0))]
     (apply max (map hand-value checkers))))
